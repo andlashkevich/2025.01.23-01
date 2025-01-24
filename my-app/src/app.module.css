@@ -1,0 +1,23 @@
+
+.wrap {
+	width: 65%;
+	display: flex;
+	flex-flow: column;
+	justify-content: flex-start;
+	margin: 0px;
+	padding: 10px;
+
+ }
+
+.error {
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	color:rgb(238, 98, 98);
+}
+.notFnd {
+	text-align: center;
+	font-size: 22px;
+	font-weight: bold;
+	color: rgb(238, 98, 98);
+}
