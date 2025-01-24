@@ -1,10 +1,27 @@
-import { useContext } from 'react';
-import { AppContext } from '../../../context';
 import styles from './buttons.module.css';
-import { Create, Find, Sort, Update } from '../../../components';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+	Create,
+	Find,
+	Sort,
+	Update,
+	selectEr,
+	selectInT,
+	selectOuT,
+	setInT,
+	setOuT,
+	setEr,
+} from '../../../components';
 
-export const Buttons = ({ error, setError, ind }) => {
-	const { inTask, setInTask, outTask, setOutTask } = useContext(AppContext);
+export const Buttons = (ind) => {
+	const dispatch = useDispatch();
+	const inTask = useSelector(selectInT);
+	const outTask = useSelector(selectOuT);
+	const error = useSelector(selectEr);
+	const setError = (er) => dispatch(setEr(er));
+	const setInTask = (txt) => dispatch(setInT(txt));
+	const setOutTask = (ar) => dispatch(setOuT(ar));
+
 	const sortTask = () => Sort(outTask, setOutTask);
 	const findTask = () => Find(inTask, outTask, setError, setOutTask);
 	const createTask = () => Create(inTask, setError, setInTask);

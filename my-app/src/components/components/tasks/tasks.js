@@ -1,10 +1,16 @@
 import styles from './tasks.module.css';
-import { useContext } from 'react';
-import { AppContext } from '../../../context';
-import { Delete, Fix } from '../../../components';
+import { useSelector, useDispatch } from 'react-redux';
+import { Delete, Fix, selectOuT, setInT } from '../../../components';
 
 export const Tasks = ({ refresh, setRefresh, setInd }) => {
-	const { setInTask, outTask } = useContext(AppContext);
+	const dispatch = useDispatch();
+	// const inTask = useSelector(selectInT);
+	const outTask = useSelector(selectOuT);
+	// const error = useSelector(selectEr);
+	// const setError = (er) => dispatch(setEr(er));
+	const setInTask = (txt) => dispatch(setInT(txt));
+	// const setOutTask = (ar) => dispatch(setOuT(ar));
+	// const { setInTask, outTask } = useContext(AppContext);
 	const delTask = (e) => Delete(e, outTask, refresh, setRefresh);
 	const fixTask = (e) => Fix(e, outTask, setInd, setInTask);
 	return (
