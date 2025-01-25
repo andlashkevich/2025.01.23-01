@@ -1,1 +1,1 @@
-export const selectOuT = (state) => state.outTask;
+export const selectOuT = (state) => state.stateA.outTask;

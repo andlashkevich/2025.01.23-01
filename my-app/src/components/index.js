@@ -10,7 +10,7 @@ export * from './components/field/field';
 export * from './components/buttons/buttons';
 export * from './components/head/head';
 export * from './components/tasks/tasks';
-export * from './reducers/reducer';
+export * from './reducers/reducerA';
 export * from './reducers/reducerB';
 export * from './selectors/select-error';
 export * from './selectors/select-in-task';

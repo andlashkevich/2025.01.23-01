@@ -1,1 +1,1 @@
-export const selectInT = (state) => state.inTask;
+export const selectInT = (state) => state.stateB.inTask;

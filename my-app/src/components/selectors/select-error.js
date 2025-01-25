@@ -1,1 +1,1 @@
-export const selectEr = (state) => state.error;
+export const selectEr = (state) => state.stateB.error;
