@@ -20,3 +20,4 @@ export * from './actions/reset';
 export * from './actions/set-error';
 export * from './actions/set-intask';
 export * from './actions/set-outtask';
+export * from './actions/set-ind';

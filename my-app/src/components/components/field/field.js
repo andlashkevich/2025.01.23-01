@@ -1,25 +1,18 @@
 import styles from './field.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-	ChgInp,
-	selectEr,
-	selectInT,
-	selectOuT,
-	setEr,
-	setInT,
-} from '../../../components';
+import { ChgInp, selectEr, selectInT, selectOuT, setEr, setInT } from '../..';
 
 export const Field = () => {
-	const dispatch = useDispatch();
 	const inTask = useSelector(selectInT);
 	const outTask = useSelector(selectOuT);
 	const error = useSelector(selectEr);
 
+	const dispatch = useDispatch();
 	const setError = (er) => dispatch(setEr(er));
 	const setInTask = (txt) => dispatch(setInT(txt));
-	// const setOutTask = (ar) => dispatch(setOuT(ar));
 
 	const ChangeInput = ({ target }) => ChgInp({ target }, outTask, setError, setInTask);
+
 	return (
 		<div className={styles.field}>
 			{error ? <div className={styles.error}>{error}</div> : null}
