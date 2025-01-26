@@ -16,6 +16,10 @@ export const Buttons = () => {
 	const outTask = useSelector(selectOuT);
 	const error = useSelector(selectEr);
 	const ind = useSelector(selectInd);
+	const ban =
+		!inTask ||
+		error ||
+		outTask.find((it) => it.task.toLowerCase() === inTask.toLowerCase());
 
 	const dispatch = useDispatch();
 	const createTask = () => dispatch(Create(inTask));
@@ -25,11 +29,7 @@ export const Buttons = () => {
 
 	return (
 		<div className={styles.buttons}>
-			<button
-				disabled={!inTask || error}
-				className={styles.сButton}
-				onClick={createTask}
-			>
+			<button disabled={ban} className={styles.сButton} onClick={createTask}>
 				Добавить
 			</button>
 			<button disabled={!outTask} onClick={sortTask} className={styles.sButton}>
@@ -38,11 +38,7 @@ export const Buttons = () => {
 			<button disabled={!inTask} onClick={findTask} className={styles.fButton}>
 				Найти
 			</button>
-			<button
-				disabled={!inTask || error}
-				onClick={updTask}
-				className={styles.uButton}
-			>
+			<button disabled={ban} onClick={updTask} className={styles.uButton}>
 				Изменить
 			</button>
 		</div>

@@ -1,1 +1,1 @@
-export const selectInd = (state) => state.stateA.ind;
+export const selectInd = (state) => state.stateB.ind;

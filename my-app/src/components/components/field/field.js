@@ -1,6 +1,7 @@
 import styles from './field.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { ChgInp, selectEr, selectInT, selectOuT, setEr, setInT } from '../..';
+import { ChgInp, GetTsk, selectEr, selectInT, selectOuT, setEr, setInT } from '../../../components';
+
 
 export const Field = () => {
 	const dispatch = useDispatch();
@@ -25,6 +26,7 @@ export const Field = () => {
 				onClick={() => {
 					dispatch(setInT(''));
 					dispatch(setEr(null));
+					dispatch(GetTsk())
 				}}
 				className={styles.xBut}
 			>

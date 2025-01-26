@@ -1,6 +1,5 @@
 const initialState = {
 	outTask: [],
-	ind: '',
 };
 
 export const reducerA = (state = initialState, { type, payload }) => {
@@ -10,11 +9,7 @@ export const reducerA = (state = initialState, { type, payload }) => {
 				...state,
 				outTask: payload,
 			};
-		case 'SET_IND':
-			return {
-				...state,
-				ind: payload,
-			};
+
 		default:
 			return state;
 	}
