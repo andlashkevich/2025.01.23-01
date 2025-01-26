@@ -16,7 +16,6 @@ export * from './selectors/select-error';
 export * from './selectors/select-in-task';
 export * from './selectors/select-out-task';
 export * from './selectors/select-ind';
-export * from './actions/reset';
 export * from './actions/set-error';
 export * from './actions/set-intask';
 export * from './actions/set-outtask';

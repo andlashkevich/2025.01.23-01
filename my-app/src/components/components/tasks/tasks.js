@@ -1,14 +1,15 @@
 import styles from './tasks.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { Delete, Fix, selectOuT, setInT, setI } from '../..';
+import { Delete, Fix, selectOuT, setInT, setI, setOuT } from '../..';
 
 export const Tasks = () => {
 	const outTask = useSelector(selectOuT);
 	const dispatch = useDispatch();
+	const setOutTask = (ar) => dispatch(setOuT(ar));
 	const setInTask = (txt) => dispatch(setInT(txt));
 	const setInd = (i) => dispatch(setI(i));
 
-	const delTask = (e) => Delete(e, outTask);
+	const delTask = (e) => Delete(e, outTask, setOutTask);
 	const fixTask = (e) => Fix(e, outTask, setInd, setInTask);
 
 	return (
