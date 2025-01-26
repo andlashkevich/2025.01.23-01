@@ -3,15 +3,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { ChgInp, selectEr, selectInT, selectOuT, setEr, setInT } from '../..';
 
 export const Field = () => {
+	const dispatch = useDispatch();
 	const inTask = useSelector(selectInT);
 	const outTask = useSelector(selectOuT);
 	const error = useSelector(selectEr);
-
-	const dispatch = useDispatch();
-	const setError = (er) => dispatch(setEr(er));
-	const setInTask = (txt) => dispatch(setInT(txt));
-
-	const ChangeInput = ({ target }) => ChgInp({ target }, outTask, setError, setInTask);
+	const ChangeInput = ({ target }) => ChgInp({ target }, outTask, dispatch);
 
 	return (
 		<div className={styles.field}>
@@ -27,8 +23,8 @@ export const Field = () => {
 			></textarea>
 			<button
 				onClick={() => {
-					setInTask('');
-					setError(null);
+					dispatch(setInT(''));
+					dispatch(setEr(null));
 				}}
 				className={styles.xBut}
 			>

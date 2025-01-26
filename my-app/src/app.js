@@ -1,12 +1,10 @@
 import styles from './app.module.css';
-import { useSelector, useDispatch } from 'react-redux';
-import { GetTsk, Buttons, Field, Head, Tasks, selectInT, setOuT } from './components';
+import { useDispatch } from 'react-redux';
+import { GetTsk, Buttons, Field, Head, Tasks } from './components';
 
 export function App() {
 	const dispatch = useDispatch();
-	const inTask = useSelector(selectInT);
-	const setOutTask = (ar) => dispatch(setOuT(ar));
-	GetTsk(inTask, setOutTask);
+	dispatch(GetTsk());
 
 	return (
 		<div className={styles.wrap}>
